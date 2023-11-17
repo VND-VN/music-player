@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zing MP3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="https://d1j8r0kxyu9tj8.cloudfront.net/images/1533455616Z5Gtl4oKo0qM1E9.jpg"
+        type="image/x-icon">
+</head>
+
+<body>
+    <div class="player">
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <!-- Header -->
+            <header>
+                <div class="accessibility"> 
+                    <span class="volumn-option js-volumn-option">
+                        <i class="bi bi-volume-up-fill volumn-item volumn-height "></i>
+                        <i class="bi bi-volume-down-fill volumn-item volumn-middle hide"></i>
+                        <i class="bi bi-volume-mute-fill volumn-item volumn-off hide"></i>
+                    </span>
+                    <input id="volumn" class="form-range volumn volumn-js" type="range" value="1" step="0.01" min="0" max="1">
+                    <button class="btn btn-primary js-btn-primary">Add song</button>
+                    <br>
+                </div>
+                <h1></h1>
+            </header>
+
+            <!-- CD -->
+            <div class="cd">
+                <div class="cd-thumb" style="background-image: url('#')">
+                </div>
+            </div>
+
+            <!-- Control -->
+            <div class="control">
+                <div class="btn btn-repeat">
+                    <i class="fas fa-redo"></i>
+                </div>
+                <div class="btn btn-prev">
+                    <i class="fas fa-step-backward"></i>
+                </div>
+                <div class="btn btn-toggle-play">
+                    <i class="fas fa-pause icon-pause"></i>
+                    <i class="fas fa-play icon-play"></i>
+                </div>
+                <div class="btn btn-next">
+                    <i class="fas fa-step-forward"></i>
+                </div>
+                <div class="btn btn-random">
+                    <i class="fas fa-random"></i>
+                </div>
+            </div>
+
+            <div id="timeRange" class="time-range">0:00/ 0:00</div>
+            <input id="progress" class=" form-range progress progress-js" type="range" value="0" step="1" min="0" max="100">
+
+            <audio id="audio" src=""></audio>
+        </div>
+
+        <!-- Playlist -->
+        <div class="playlist">
+
+        </div>
+
+        <!-- Modal add song -->
+        <div class="overlay-modal hide">
+            <div class="modal-container modal modal-sheet position-static p-4 py-md-5" tabindex="-1" role="dialog"
+                id="modalSignin">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content rounded-4 shadow">
+                        <div class="modal-header p-5 pb-4 border-bottom-0">
+                            <h1 class="fw-bold mb-0 fs-2">Add new song</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body p-5 pt-0">
+                            <form class="formAddSong">
+                                <div class="form-floating mb-3">
+                                    <input required type="text" class="nameInput form-control rounded-3" id="floatingInput"
+                                        placeholder="Name">
+                                    <label for="floatingInput">Name</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input required type="text" class="singerInput form-control rounded-3" id="floatingPassword"
+                                        placeholder="Singer">
+                                    <label for="floatingPassword">Singer</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input required type="file" class="pathInput form-control rounded-3" id="floatingPassword"
+                                        placeholder="PathMp3">
+                                    <label for="floatingPassword">File mp3</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input required type="text" class="imageInput form-control rounded-3" id="floatingPassword"
+                                        placeholder="Image">
+                                    <label for="floatingPassword">Image</label>
+                                </div>
+                                <button class="w-100 mb-2 btn btn-saveNewSong btn-lg rounded-3 btn-primary"
+                                    type="submit">Add new
+                                    song
+                                </button>
+                                <small class="text-body-secondary">Add song chỉ là tạm thời được lưu vào local, xóa local sẽ hết.</small>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./app.js"></script>
+
+</html>
